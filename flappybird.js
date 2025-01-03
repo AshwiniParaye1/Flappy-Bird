@@ -95,6 +95,11 @@ function update() {
     }
   }
 
+  //clear pipes
+  while (pipeArray.length > 0 && pipeArray[0].x < -pipeWidth) {
+    pipeArray.shift(); //removes first pipe
+  }
+
   //score
 
   context.fillStyle = "white";
