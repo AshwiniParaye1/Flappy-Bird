@@ -29,6 +29,8 @@ let pipeY = 0;
 let topPipeImg;
 let bottomPipeImg;
 
+let velocityX = -2; //pipes moving left speed
+
 window.onload = function () {
   board = document.getElementById("board");
   board.height = boardHeight;
@@ -62,6 +64,7 @@ function update() {
   //pipes
   for (let i = 0; i < pipeArray.length; i++) {
     let pipe = pipeArray[i];
+    pipe.x += velocityX;
     context.drawImage(pipe.img, pipe.x, pipe.y, pipe.width, pipe.height);
   }
 }
