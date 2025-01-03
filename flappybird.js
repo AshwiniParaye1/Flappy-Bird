@@ -35,6 +35,8 @@ let gravity = 0.4;
 
 let gameOver = false;
 
+let score = 0;
+
 window.onload = function () {
   board = document.getElementById("board");
   board.height = boardHeight;
@@ -83,10 +85,21 @@ function update() {
     pipe.x += velocityX;
     context.drawImage(pipe.img, pipe.x, pipe.y, pipe.width, pipe.height);
 
+    if (!pipe.passed && bird.x > pipe.x + pipe.width) {
+      score += 0.5;
+      pipe.passed = true;
+    }
+
     if (detectCollision(bird, pipe)) {
       gameOver = true;
     }
   }
+
+  //score
+
+  context.fillStyle = "white";
+  context.font = "45px sans-serif";
+  context.fillText(score, 5, 45);
 }
 
 function placePipes() {
