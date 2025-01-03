@@ -29,7 +29,7 @@ let pipeY = 0;
 let topPipeImg;
 let bottomPipeImg;
 
-let velocityX = -2; //pipes moving left speed
+let velocityX = -4; //pipes moving left speed
 let velocityY = 0; //bird jumping speed
 let gravity = 0.4;
 
