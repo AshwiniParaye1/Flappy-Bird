@@ -47,7 +47,12 @@ window.onload = function () {
   birdImg.onload = () => drawBird();
   requestAnimationFrame(update);
   setInterval(placePipes, 1500);
+
+  // Keyboard controls
   document.addEventListener("keydown", moveBird);
+
+  // Touch controls
+  board.addEventListener("touchstart", moveBirdOnTouch);
 };
 
 function update() {
@@ -121,6 +126,15 @@ function moveBird(e) {
   }
 }
 
+// Handle touch input
+function moveBirdOnTouch() {
+  if (!gameOver) {
+    velocityY = -6;
+  } else {
+    resetGame();
+  }
+}
+
 function detectCollision(a, b) {
   return (
     a.x < b.x + b.width &&
@@ -150,4 +164,5 @@ function resetGame() {
   score = 0;
   gameOver = false;
   velocityY = 0;
+  requestAnimationFrame(update); // Restart game loop
 }
