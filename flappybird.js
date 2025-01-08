@@ -33,9 +33,10 @@ let gameOver = false;
 let score = 0;
 
 // Sounds
-const wingSound = new Audio("./sound/sfx_wing.wav");
+// const wingSound = new Audio("./sound/sfx_wing.wav");
+const wingSound = new Audio("./sound/wing.ogg");
 // const hitSound = new Audio("./sound/sfx_hit.wav");
-const hitSound = new Audio("./sound/hit_5bdk6FwL.ogg");
+const hitSound = new Audio("./sound/hit1.ogg");
 const bgm = new Audio("./sound/bgm_mario.mp3");
 bgm.loop = true;
 
