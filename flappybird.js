@@ -168,6 +168,7 @@ function drawScore() {
 function displayGameOver() {
   context.fillText("GAME OVER!", 45, 90);
   bgm.pause();
+  bgm.currentTime = 0;
 }
 
 function resetGame() {
