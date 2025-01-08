@@ -38,6 +38,8 @@ let gravity = 0.4;
 let gameOver = false;
 let score = 0;
 
+let wingSound = new Audio("./sound/sfx_wing.wav");
+
 window.onload = function () {
   board = document.getElementById("board");
   board.height = boardHeight;
@@ -118,6 +120,7 @@ function placePipes() {
 
 function moveBird(e) {
   if (["Space", "ArrowUp", "KeyX"].includes(e.code)) {
+    wingSound.play();
     velocityY = -6;
 
     if (gameOver) {
