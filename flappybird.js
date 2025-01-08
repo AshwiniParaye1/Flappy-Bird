@@ -46,7 +46,7 @@ window.onload = function () {
 
   birdImg.onload = () => drawBird();
   requestAnimationFrame(update);
-  setInterval(placePipes, 1500);
+  setInterval(placePipes, 1000);
 
   // Keyboard controls
   document.addEventListener("keydown", moveBird);
