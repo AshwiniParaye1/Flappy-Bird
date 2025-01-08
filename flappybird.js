@@ -39,6 +39,7 @@ let gameOver = false;
 let score = 0;
 
 let wingSound = new Audio("./sound/sfx_wing.wav");
+let hitSound = new Audio("./sound/sfx_hit.wav");
 
 window.onload = function () {
   board = document.getElementById("board");
@@ -83,6 +84,7 @@ function update() {
     }
 
     if (detectCollision(bird, pipe)) {
+      hitSound.play();
       gameOver = true;
     }
   });
