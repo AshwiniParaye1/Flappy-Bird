@@ -40,6 +40,8 @@ let score = 0;
 
 let wingSound = new Audio("./sound/sfx_wing.wav");
 let hitSound = new Audio("./sound/sfx_hit.wav");
+let bgm = new Audio("./sound/bgm_mario.mp3");
+bgm.loop = true;
 
 window.onload = function () {
   board = document.getElementById("board");
@@ -122,6 +124,10 @@ function placePipes() {
 
 function moveBird(e) {
   if (["Space", "ArrowUp", "KeyX"].includes(e.code)) {
+    if (bgm.paused) {
+      bgm.play();
+    }
+
     wingSound.play();
     velocityY = -6;
 
@@ -161,6 +167,7 @@ function drawScore() {
 
 function displayGameOver() {
   context.fillText("GAME OVER!", 45, 90);
+  bgm.pause();
 }
 
 function resetGame() {
